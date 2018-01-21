@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Homework3_3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         int numberOfDays = scanner.nextInt();
         if (numberOfDays<=0) {
             System.out.println("Количество дней должно быть больше 0");
