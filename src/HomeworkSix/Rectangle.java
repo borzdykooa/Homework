@@ -15,7 +15,7 @@ public class Rectangle {
     }
 
     public int area() {
-        return ((pointLowerRight.getX() - pointUpperLeft.getX()) * (pointUpperLeft.getY() - pointLowerRight.getY()));
+        return (pointLowerRight.getX() - pointUpperLeft.getX()) * (pointUpperLeft.getY() - pointLowerRight.getY());
     }
 }
 
