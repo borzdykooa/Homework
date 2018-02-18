@@ -25,7 +25,6 @@ public class PoemDemo {
         }
 
         Map<Character, Integer> map = new TreeMap<Character, Integer>();
-
         try (Scanner scanner = new Scanner(new BufferedInputStream(new FileInputStream(poem)))) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
@@ -47,7 +46,7 @@ public class PoemDemo {
 
         try (FileOutputStream fos = new FileOutputStream(numberOfLetters);
              PrintStream printStream = new PrintStream(fos)) {
-            printStream.println(PoemUtil.stringOfLetters(string));
+            printStream.println(PoemUtil.stringOfLettersAndNumbers(string));
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

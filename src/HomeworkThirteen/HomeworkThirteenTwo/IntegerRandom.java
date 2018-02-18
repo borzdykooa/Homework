@@ -18,10 +18,10 @@ import static java.lang.String.join;
 public class IntegerRandom {
 
     public static void main(String[] args) {
-        File file = new File(join(File.separator, "resources", "src", "integers.txt"));
+        File integers = new File(join(File.separator, "resources", "src", "integers.txt"));
 
         try {
-            file.createNewFile();
+            integers.createNewFile();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
@@ -32,7 +32,7 @@ public class IntegerRandom {
             list.add(random.nextInt(100));
         }
 
-        try (FileOutputStream fos = new FileOutputStream(file);
+        try (FileOutputStream fos = new FileOutputStream(integers);
              PrintStream printStream = new PrintStream(fos)) {
             printStream.println(list);
         } catch (IOException ex) {
@@ -40,7 +40,7 @@ public class IntegerRandom {
         }
 
         String line = null;
-        try (Scanner scanner = new Scanner(new BufferedInputStream(new FileInputStream(file)))) {
+        try (Scanner scanner = new Scanner(new BufferedInputStream(new FileInputStream(integers)))) {
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine();
             }
@@ -57,7 +57,7 @@ public class IntegerRandom {
             e.printStackTrace();
         }
 
-        try (FileOutputStream fos = new FileOutputStream(file);
+        try (FileOutputStream fos = new FileOutputStream(integers);
              PrintStream printStream = new PrintStream(fos)) {
             printStream.println(newList);
         } catch (IOException ex) {
